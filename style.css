@@ -1,119 +1,53 @@
-:root {
-    --gold: #b38b59;
-    --dark: #121212;
-    --light: #fdfdfd;
-}
+:root { --gold: #b38b59; --dark: #121212; --light: #fdfdfd; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); overflow-x: hidden; }
+/* Nav & Hero */
+.nav-minimal { padding: 30px 8%; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 4px; font-weight: 600; text-decoration: none; color: var(--dark); }
+.nav-links a { text-decoration: none; color: var(--dark); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; margin-left: 30px; }
+.hero-minimal { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero-inner h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 300; font-style: italic; margin-bottom: 20px; }
+.eyebrow { text-transform: uppercase; letter-spacing: 5px; font-size: 0.6rem; color: var(--gold); display: block; margin-bottom: 10px; }
+.cta-line { text-decoration: none; color: var(--dark); border-bottom: 1px solid var(--dark); padding-bottom: 5px; font-size: 0.8rem; letter-spacing: 2px; }
 
-/* Navigation */
-.nav-minimal { 
-    padding: 35px 8%; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-}
-.logo { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 1.8rem; 
-    letter-spacing: 5px; 
-    text-decoration: none; 
-    color: var(--dark); 
-    font-weight: 600;
-}
-.nav-links a { 
-    text-decoration: none; 
-    color: var(--dark); 
-    font-size: 0.7rem; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    margin-left: 30px;
-}
-
-/* Hero */
-.hero-minimal { 
-    height: 70vh; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center;
-}
-.hero-inner h1 { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: clamp(3rem, 8vw, 5.5rem); 
-    font-weight: 300; 
-    font-style: italic;
-    margin-bottom: 30px;
-}
-.cta-line { 
-    text-decoration: none; 
-    color: var(--dark); 
-    border-bottom: 1px solid var(--dark); 
-    padding-bottom: 5px; 
-    letter-spacing: 2px; 
-    font-size: 0.8rem;
-}
-
-/* Rooms Grid */
-.section { padding: 100px 8%; max-width: 1400px; margin: auto; }
-.room-flex { display: flex; flex-direction: column; gap: 100px; }
-.room-item { 
-    display: grid; 
-    grid-template-columns: 1.2fr 0.8fr; 
-    gap: 60px; 
-    align-items: center; 
-}
+/* Room Layout */
+.section { padding: 80px 8%; max-width: 1400px; margin: auto; }
+.room-flex { display: flex; flex-direction: column; gap: 80px; }
+.room-item { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
 .room-item:nth-child(even) { direction: rtl; }
 .room-item:nth-child(even) .room-info { direction: ltr; }
-
-.room-img-box { 
-    height: 550px; 
-    overflow: hidden; 
-    box-shadow: 20px 20px 0px var(--gold); /* Boutique Offset */
-}
-.room-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1s ease; }
+.room-img-box { height: 500px; overflow: hidden; box-shadow: 20px 20px 0px var(--gold); }
+.room-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1s; }
 .room-item:hover img { transform: scale(1.05); }
+.room-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 10px; }
+.room-price { color: #888; display: block; margin-bottom: 25px; letter-spacing: 1px; }
 
-.room-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; margin-bottom: 15px; }
-.room-price { display: block; margin-bottom: 30px; color: #888; letter-spacing: 1px; }
+/* Location & Map */
+.location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.contact-actions { display: flex; gap: 15px; margin-top: 30px; }
+.btn-outline { padding: 12px 25px; border: 1px solid var(--dark); text-decoration: none; color: var(--dark); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+.btn-outline:hover { background: var(--dark); color: white; }
+.map-box { filter: grayscale(100%); transition: 0.5s; border: 1px solid #eee; }
+.map-box:hover { filter: grayscale(0%); }
 
 /* Buttons & Modal */
-.btn-primary { 
-    background: var(--dark); 
-    color: white; 
-    border: none; 
-    padding: 15px 40px; 
-    cursor: pointer; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    font-size: 0.75rem;
-}
-.booking-modal { 
-    position: fixed; inset: 0; background: rgba(255,255,255,0.98); 
-    display: none; align-items: center; justify-content: center; z-index: 2000; 
-}
+.btn-primary { background: var(--dark); color: white; border: none; padding: 15px 40px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; }
+.booking-modal { position: fixed; inset: 0; background: rgba(255,255,255,0.98); display: none; align-items: center; justify-content: center; z-index: 2000; }
 .booking-modal.active { display: flex; }
-.modal-box { width: 100%; max-width: 450px; padding: 40px; text-align: center; }
-.fine-form input, .fine-form select { 
-    width: 100%; padding: 15px 0; margin-bottom: 20px; 
-    border: none; border-bottom: 1px solid #ddd; outline: none; font-family: inherit;
-}
-.btn-submit { background: var(--gold); color: white; width: 100%; padding: 15px; border: none; cursor: pointer; text-transform: uppercase; }
+.modal-box { width: 90%; max-width: 450px; text-align: center; }
+.fine-form input, .fine-form select { width: 100%; padding: 15px; margin-bottom: 20px; border: none; border-bottom: 1px solid #ddd; outline: none; font-family: inherit; }
+.btn-submit { background: var(--gold); color: white; width: 100%; padding: 15px; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; }
 
-/* WhatsApp */
+/* Sticky WA */
 .whatsapp-container { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
-.wa-link { 
-    background: white; border: 1px solid #eee; padding: 12px 20px; 
-    text-decoration: none; display: flex; align-items: center; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-radius: 4px;
-}
-.wa-link img { width: 20px; margin-right: 10px; }
-.wa-link span { color: var(--dark); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+.wa-fab { background: white; border: 1px solid #eee; padding: 10px 20px; text-decoration: none; display: flex; align-items: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.wa-fab img { width: 18px; margin-right: 10px; }
+.wa-fab span { color: var(--dark); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
 
 /* Mobile */
 @media (max-width: 900px) {
-    .room-item, .room-item:nth-child(even) { grid-template-columns: 1fr; text-align: center; }
+    .room-item, .room-item:nth-child(even), .location-grid { grid-template-columns: 1fr; text-align: center; }
     .room-img-box { height: 350px; box-shadow: 10px 10px 0px var(--gold); }
     .nav-links { display: none; }
 }
