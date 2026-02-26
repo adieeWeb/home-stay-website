@@ -3,57 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anika's Cozy HomeStay | Boutique Stay Dwarka</title>
+    <title>Anika's Cozy HomeStay | Boutique Dwarka</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="nav-minimal">
         <a href="index.html" class="logo">ANIKA'S</a>
         <div class="nav-links">
-            <a href="#rooms">Rooms</a>
+            <a href="#rooms">The Rooms</a>
             <a href="ceo.html">The CEO</a>
-            <a href="#contact">Location</a>
+            <a href="https://wa.me/919310355064">Contact</a>
         </div>
     </nav>
 
     <header class="hero-minimal">
-        <div class="hero-inner fade-in">
-            <span class="eyebrow">Dwarka Sector-3, Delhi</span>
+        <div class="hero-inner">
+            <span class="eyebrow">Sector-3, Dwarka</span>
             <h1>Comfort built with love.</h1>
-            <p>Experience a stay where every detail feels like home.</p>
             <a href="#rooms" class="cta-line">Explore the Collection →</a>
         </div>
     </header>
 
     <section id="rooms" class="section">
         <div class="room-flex">
-    <div class="room-item">
-        <div class="room-img-box">
-            <img src="images/room1.jpg" alt="Lavender Suite">
-        </div>
-        <div class="room-info">
-            <h3>The Lavender Suite</h3>
-            <span class="room-price">INR 6,500 / Night</span>
-            <button class="btn-primary open-modal" data-room="Lavender Suite">Book This Suite</button>
-        </div>
-    </div>
-    </div>
-            <div class="room-item reveal">
-                <div class="room-img-box"><img src="images/room2.jpg" alt="Rose Petal Room"></div>
+            <div class="room-item">
+                <div class="room-img-box">
+                    <img src="room1.jpg" alt="Lavender Suite">
+                </div>
+                <div class="room-info">
+                    <h3>The Lavender Suite</h3>
+                    <span class="room-price">₹6,500 / night</span>
+                    <button class="btn-primary open-modal" data-room="Lavender Suite">Check Availability</button>
+                </div>
+            </div>
+
+            <div class="room-item">
+                <div class="room-img-box">
+                    <img src="room2.jpg" alt="Rose Petal Room">
+                </div>
                 <div class="room-info">
                     <h3>Rose Petal Room</h3>
                     <span class="room-price">₹5,200 / night</span>
-                    <button class="btn-primary open-modal" data-room="Rose Petal Room">Reserve Stay</button>
+                    <button class="btn-primary open-modal" data-room="Rose Petal Room">Check Availability</button>
                 </div>
             </div>
-            <div class="room-item reveal">
-                <div class="room-img-box"><img src="images/room3.jpg" alt="Cloud Nine Attic"></div>
+
+            <div class="room-item">
+                <div class="room-img-box">
+                    <img src="room3.jpg" alt="Cloud Nine Attic">
+                </div>
                 <div class="room-info">
                     <h3>Cloud Nine Attic</h3>
                     <span class="room-price">₹7,800 / night</span>
-                    <button class="btn-primary open-modal" data-room="Cloud Nine Attic">Reserve Stay</button>
+                    <button class="btn-primary open-modal" data-room="Cloud Nine Attic">Check Availability</button>
                 </div>
             </div>
         </div>
@@ -62,80 +66,49 @@
     <div id="bookingModal" class="booking-modal">
         <div class="modal-box">
             <div class="modal-close">×</div>
-            <div class="modal-body">
-                <h2>Reservation</h2>
-                <p>Submit your details and we will call you to confirm.</p>
-                <form action="https://formspree.io/f/mbdawagb" method="POST" class="fine-form">
-                    <input type="hidden" name="_next" value="thankyou.html">
-                    <div class="input-wrapper">
-                        <label>Full Name</label>
-                        <input type="text" name="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="input-wrapper">
-                        <label>Phone Number</label>
-                        <input type="tel" name="phone" placeholder="+91 00000 00000" required>
-                    </div>
-                    <div class="split">
-                        <div class="input-wrapper">
-                            <label>Check-in</label>
-                            <input type="date" name="checkin" required>
-                        </div>
-                        <div class="input-wrapper">
-                            <label>Guests</label>
-                            <select name="guests">
-                                <option>1 Guest</option>
-                                <option>2 Guests</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="input-wrapper">
-                        <label>Selected Suite</label>
-                        <select id="roomSelect" name="room_type">
-                            <option>The Lavender Suite</option>
-                            <option>Rose Petal Room</option>
-                            <option>Cloud Nine Attic</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-submit">Check Availability</button>
-                </form>
-            </div>
+            <h2>Reservation</h2>
+            <p>Direct booking request to Anika.</p>
+            <form action="https://formspree.io/f/mbdawagb" method="POST" class="fine-form">
+                <input type="hidden" name="_next" value="https://adieeweb.github.io/home-stay-website/thankyou.html">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <div class="split">
+                    <input type="date" name="date" required>
+                    <select name="guests">
+                        <option>1 Guest</option>
+                        <option>2 Guests</option>
+                    </select>
+                </div>
+                <select id="roomSelect" name="room">
+                    <option>The Lavender Suite</option>
+                    <option>Rose Petal Room</option>
+                    <option>Cloud Nine Attic</option>
+                </select>
+                <button type="submit" class="btn-submit">Send Request</button>
+            </form>
         </div>
     </div>
 
     <div class="whatsapp-container">
-        <a href="https://wa.me/919310355064" class="wa-fab-final" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
-            <span class="wa-label">Chat with Anika</span>
+        <a href="https://wa.me/919310355064" class="wa-link" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <span>Chat with us</span>
         </a>
     </div>
-
-    <footer id="contact" class="footer">
-        <div class="map-area">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.243550608248!2d77.0427303753232!3d28.592470075686036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ad3f8b00001%3A0x6a0846549a1d4a0a!2sWelcome%20Apartment!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <p>B-2/1, Welcome Apartment, Sector-3, Dwarka, Delhi</p>
-    </footer>
 
     <script>
         const modal = document.getElementById("bookingModal");
         const roomSelect = document.getElementById("roomSelect");
 
-        document.querySelectorAll(".open-modal").forEach(b => {
-            b.onclick = () => {
+        document.querySelectorAll(".open-modal").forEach(btn => {
+            btn.onclick = () => {
                 modal.classList.add("active");
-                roomSelect.value = b.getAttribute("data-room");
+                roomSelect.value = btn.getAttribute("data-room");
             }
         });
 
         document.querySelector(".modal-close").onclick = () => modal.classList.remove("active");
-        
         window.onclick = (e) => { if(e.target == modal) modal.classList.remove("active"); }
-
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('.reveal').forEach(r => {
-                if (r.getBoundingClientRect().top < window.innerHeight - 50) r.classList.add('active');
-            });
-        });
     </script>
 </body>
 </html>
