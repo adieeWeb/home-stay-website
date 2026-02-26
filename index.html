@@ -12,9 +12,9 @@
     <nav class="nav-minimal">
         <a href="index.html" class="logo">ANIKA'S</a>
         <div class="nav-links">
-            <a href="#rooms">The Rooms</a>
+            <a href="#rooms">Rooms</a>
             <a href="ceo.html">The CEO</a>
-            <a href="https://wa.me/919310355064">Contact</a>
+            <a href="#location">Location</a>
         </div>
     </nav>
 
@@ -29,36 +29,45 @@
     <section id="rooms" class="section">
         <div class="room-flex">
             <div class="room-item">
-                <div class="room-img-box">
-                    <img src="room1.jpg" alt="Lavender Suite">
-                </div>
+                <div class="room-img-box"><img src="room1.jpg" alt="Lavender Suite"></div>
                 <div class="room-info">
                     <h3>The Lavender Suite</h3>
                     <span class="room-price">₹6,500 / night</span>
-                    <button class="btn-primary open-modal" data-room="Lavender Suite">Check Availability</button>
+                    <button class="btn-primary open-modal" data-room="Lavender Suite">Reserve Stay</button>
                 </div>
             </div>
-
             <div class="room-item">
-                <div class="room-img-box">
-                    <img src="room2.jpg" alt="Rose Petal Room">
-                </div>
+                <div class="room-img-box"><img src="room2.jpg" alt="Rose Petal Room"></div>
                 <div class="room-info">
                     <h3>Rose Petal Room</h3>
                     <span class="room-price">₹5,200 / night</span>
-                    <button class="btn-primary open-modal" data-room="Rose Petal Room">Check Availability</button>
+                    <button class="btn-primary open-modal" data-room="Rose Petal Room">Reserve Stay</button>
                 </div>
             </div>
-
             <div class="room-item">
-                <div class="room-img-box">
-                    <img src="room3.jpg" alt="Cloud Nine Attic">
-                </div>
+                <div class="room-img-box"><img src="room3.jpg" alt="Cloud Nine Attic"></div>
                 <div class="room-info">
                     <h3>Cloud Nine Attic</h3>
                     <span class="room-price">₹7,800 / night</span>
-                    <button class="btn-primary open-modal" data-room="Cloud Nine Attic">Check Availability</button>
+                    <button class="btn-primary open-modal" data-room="Cloud Nine Attic">Reserve Stay</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="section">
+        <div class="location-grid">
+            <div class="location-text">
+                <span class="eyebrow">Our Home</span>
+                <h2>Find us in Sector-3</h2>
+                <p>Welcome Apartment, Plot No. 6, Sector-3, Dwarka, New Delhi 110078</p>
+                <div class="contact-actions">
+                    <a href="tel:+919310355064" class="btn-outline">Call Anika</a>
+                    <a href="https://wa.me/919310355064" class="btn-outline">WhatsApp</a>
+                </div>
+            </div>
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.551214316905!2d77.039645!3d28.613243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05370f61d7b1%3A0x8670172e2e71d7b1!2sWelcome%20Apartment!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -67,46 +76,30 @@
         <div class="modal-box">
             <div class="modal-close">×</div>
             <h2>Reservation</h2>
-            <p>Direct booking request to Anika.</p>
             <form action="https://formspree.io/f/mbdawagb" method="POST" class="fine-form">
-                <input type="hidden" name="_next" value="https://adieeweb.github.io/home-stay-website/thankyou.html">
-                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="hidden" name="_next" value="thankyou.html">
+                <input type="text" name="name" placeholder="Name" required>
                 <input type="tel" name="phone" placeholder="Phone Number" required>
-                <div class="split">
-                    <input type="date" name="date" required>
-                    <select name="guests">
-                        <option>1 Guest</option>
-                        <option>2 Guests</option>
-                    </select>
-                </div>
-                <select id="roomSelect" name="room">
-                    <option>The Lavender Suite</option>
-                    <option>Rose Petal Room</option>
-                    <option>Cloud Nine Attic</option>
-                </select>
+                <select id="roomSelect" name="room"><option>Lavender Suite</option><option>Rose Petal Room</option><option>Cloud Nine Attic</option></select>
                 <button type="submit" class="btn-submit">Send Request</button>
             </form>
         </div>
     </div>
 
     <div class="whatsapp-container">
-        <a href="https://wa.me/919310355064" class="wa-link" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            <span>Chat with us</span>
+        <a href="https://wa.me/919310355064" class="wa-fab">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+            <span>Chat</span>
         </a>
     </div>
 
     <script>
         const modal = document.getElementById("bookingModal");
         const roomSelect = document.getElementById("roomSelect");
-
-        document.querySelectorAll(".open-modal").forEach(btn => {
-            btn.onclick = () => {
-                modal.classList.add("active");
-                roomSelect.value = btn.getAttribute("data-room");
-            }
+        document.querySelectorAll(".open-modal").forEach(b => b.onclick = () => {
+            modal.classList.add("active");
+            roomSelect.value = b.getAttribute("data-room");
         });
-
         document.querySelector(".modal-close").onclick = () => modal.classList.remove("active");
         window.onclick = (e) => { if(e.target == modal) modal.classList.remove("active"); }
     </script>
